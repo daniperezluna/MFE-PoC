@@ -1,34 +1,23 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WelcomeBooksComponent } from './welcome-books/welcome-books.component';
-import { BookListComponent } from './book-list/book-list.component';
-import { BookDetailsComponent } from './book-details/book-details.component';
-import { BooksService } from "./services/books.service";
-import { HttpClientModule } from "@angular/common/http";
-import { HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
-import { InMemoryDataService } from "./services/in-memory-data.service";
+import { BooksModule } from "./books/books.module";
+import { BrowserModule } from "@angular/platform-browser";
+import { BooksWrapperComponent } from './books-wrapper/books-wrapper.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeBooksComponent,
-    BookListComponent,
-    BookDetailsComponent
+    BooksWrapperComponent
   ],
   imports: [
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BooksModule
   ],
-  providers: [
-    BooksService
-  ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

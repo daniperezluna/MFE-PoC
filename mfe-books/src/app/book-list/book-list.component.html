@@ -1,6 +1,10 @@
+
 <div class="book-list-wrapper">
+  <div class="wraper-info-navigation">
+    <a routerLink="/" class="mfe-left">Books home</a>
+    <span *ngIf="isLoggedIn" class="mfe-right">You have <span id="balance">{{balance | number:'1.2-2'}}</span> credits</span>
+  </div>
   <h1 class="book-list-title">Book List Available</h1>
-  <p>Balance: {{sharedBalanceService.balance$ | async}}</p>
   <table class="book-list">
     <thead>
       <tr class="header-panel">
@@ -10,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let book of books" [routerLink]="['/books',book.id] ">
+    <tr *ngFor="let book of books" [routerLink]="[book.id] ">
       <td>{{book.id}}</td>
       <td>{{book.title}}</td>
       <td>{{book.author}}</td>
