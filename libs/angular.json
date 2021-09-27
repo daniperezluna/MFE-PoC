@@ -1,0 +1,39 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "shared-balance": {
+      "projectType": "library",
+      "root": "projects/shared-balance",
+      "sourceRoot": "projects/shared-balance/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/shared-balance/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/shared-balance/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/shared-balance/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/shared-balance/src/test.ts",
+            "tsConfig": "projects/shared-balance/tsconfig.spec.json",
+            "karmaConfig": "projects/shared-balance/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "shared-balance"
+}

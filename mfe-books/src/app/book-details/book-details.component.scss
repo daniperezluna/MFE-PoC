@@ -1,0 +1,33 @@
+.details-wrapper {
+  .characteristics {
+    margin: 20px;
+
+    .image {
+      min-width: 30%;
+      display: inline-block;
+    }
+    .data {
+      min-width: 60%;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+  .label {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    margin-right: 10px;
+
+    &.summary {
+      display: block;
+    }
+  }
+
+  .value {
+    font-weight: bold;
+
+    &.summary {
+      display: block;
+    }
+  }
+}

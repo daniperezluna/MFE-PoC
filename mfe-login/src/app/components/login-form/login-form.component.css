@@ -1,0 +1,42 @@
+:host {
+    display: block;
+    color: #333;
+    font-size: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin-top:5px;
+    border: 0;
+    border-bottom: 2px solid #333;
+    padding: 12px;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #0069ba;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button[disabled] {
+    opacity: 0.3;
+}
+
+.ng-invalid:not(form):not(.ng-pristine)  {
+    border-bottom-color: #e33; /* red */
+}

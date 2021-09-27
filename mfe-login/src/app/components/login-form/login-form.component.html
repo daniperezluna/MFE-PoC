@@ -1,0 +1,9 @@
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <label for="username"> Username </label>
+        <input type="text" placeholder="Type your username..." 
+            required
+            [(ngModel)]="username"
+            id="username" 
+            name="username">
+    <button [disabled]="!loginForm.form.valid" type="submit">Login</button>
+</form>

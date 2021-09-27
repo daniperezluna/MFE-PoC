@@ -1,0 +1,66 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+  <style>
+    .mfe-login-container {
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%
+    }
+    .mfe-shell-overlay {
+      background-color: rgba(0,0,0,0.3);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+    mfe-login-root {
+      box-shadow: 0px 0px 5px 5px #666;
+      background-color: white;
+      width: 400px;
+      height: 230px;
+      position: absolute;
+      z-index: 99;
+      padding: 40px;
+      border-radius: 5px;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  </style>
+  <nav>
+    <application name="mfe-header"></application>
+  </nav>
+  <main style="margin-top: 80px">
+    <route default>
+      <application name="mfe-books"></application>
+    </route>
+    <route path="books">
+      <application name="mfe-books"></application>
+    </route>
+    <route path="help">
+      <application name="mfe-help"></application>
+    </route>
+  </main>
+  <div id="single-spa-application:mfe-login" class="mfe-login-container">
+    <div class="mfe-shell-overlay"></div>
+  </div>
+</single-spa-router>

@@ -1,0 +1,12 @@
+<div class="details-wrapper">
+  <div class="book-title"><h1>{{book.title}}</h1></div>
+  <div class="characteristics">
+    <div class="image"><img [src]="getImageSrc(book.id)"/></div>
+    <div class="data">
+      <div><span class="label">Author:</span><span class="value">{{book.author}}</span></div>
+      <div><span class="label">Publisher:</span><span class="value">{{book.publisher}}</span></div>
+      <div><span class="label">Edition:</span><span class="value">{{book.edition}}</span></div>
+    </div>
+  </div>
+  <div><span class="label summary">Summary:</span><span class="value summary">{{book.summary}}</span></div>
+</div>

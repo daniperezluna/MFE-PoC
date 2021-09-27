@@ -1,0 +1,133 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #556c56;
+  color: white;
+  font-weight: 600;
+}
+
+svg.material-icons {
+  margin: 0 16px;
+
+  path {
+    fill: #fff;
+  }
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+a:visited,
+a:hover {
+  color: #9ebe9f;
+  text-decoration: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+
+  &.btn {
+    transition-duration: 0.2s;
+    padding: 6px 10px;
+    margin-right: 16px;
+    background-color:#a85453;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  &.btn:hover {
+    background-color: #9ebe9f;
+    color: #5f5129;
+  }
+
+}
+
+.logged-container {
+  display: flex;
+}
+
+#user-info {
+  height: 60px;
+  display: flex;
+  flex-flow: column;
+
+  & > span:first-child {
+    margin-top: 12px;
+  }
+}
+
+#username,
+#balance {
+  color: #9ebe9f;
+}
+
+#death-star {
+  width: 45px;
+
+  svg path {
+    transition-duration: 0.4s;
+    fill: #fff;
+  }
+  
+  &:hover svg path {
+    fill: #9ebe9f;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  li {
+    float: left;
+    height: 60px;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: list-item;
+    text-align: -webkit-match-parent;
+
+    &:first-child a {
+      margin-top: 6px;
+    }
+  
+    &:not(:first-child) a:hover {
+      background-color: #9ebe9f;
+      color: #5f5129;
+    }
+  
+    a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 6px;
+      text-decoration: none;
+      cursor: pointer;
+      line-height: 32px;
+    }
+  }
+}
