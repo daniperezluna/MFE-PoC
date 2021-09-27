@@ -22,7 +22,7 @@ export class LoginFormComponent {
 
   private dispatchLoginEvent(): void {
     const eventData = this.getEventData();
-    this.el.nativeElement.dispatchEvent(
+    window.dispatchEvent(
       new CustomEvent('mfe-login', eventData)
     );
     //console.info(`[mfe-login]: 'mfe-login' event dispached with:`, eventData);
