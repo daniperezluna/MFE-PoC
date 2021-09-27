@@ -1,6 +1,10 @@
-<div class="book-list-wrapper">
-  <h1 class="book-list-title">Book List Available</h1>
 
+<div class="book-list-wrapper">
+  <div class="wraper-info-navigation">
+    <a routerLink="/" class="mfe-left">Books home</a>
+    <span *ngIf="isLoggedIn" class="mfe-right">You have <span id="balance">{{sharedBalanceService.balance$ | number:'1.2-2'}}</span> credits</span>
+  </div>
+  <h1 class="book-list-title">Book List Available</h1>
   <table class="book-list">
     <thead>
       <tr class="header-panel">

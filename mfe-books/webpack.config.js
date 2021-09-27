@@ -6,7 +6,7 @@ const share = mf.share;
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
   path.join(__dirname, 'tsconfig.json'),
-  [/* mapped paths to share */]);
+  ["shared-balance"]);
 
 module.exports = {
   output: {
@@ -32,10 +32,11 @@ module.exports = {
          },
 
         shared: share({
-          "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto', eager: true},
-          "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto', eager: true},
-          "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto', eager: true},
-          "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto', eager: true},
+          "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto'},
+          "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto'},
+          "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto'},
+          "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto'},
+          "shared-balance": { singleton: true, requiredVersion: 'auto'},
 
           ...sharedMappings.getDescriptors()
         })

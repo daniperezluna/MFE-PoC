@@ -24,7 +24,8 @@
     "angular-in-memory-web-api": "^0.11.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "shared-balance": "file:../libs/dist/shared-balance/shared-balance-0.0.4.tgz"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.3",
