@@ -1,6 +1,6 @@
 {
-  "name": "libs",
-  "version": "0.0.0",
+  "name": "shared-balance",
+  "version": "0.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
