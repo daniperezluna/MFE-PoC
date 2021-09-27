@@ -1,4 +1,3 @@
-import { SharedBalanceService } from 'shared-balance';
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from "../services/books.service";
 import { Book } from "../model/book";
@@ -13,11 +12,9 @@ export class BookListComponent implements OnInit {
   books: Book[];
 
   constructor(
-    private bookService: BooksService,
-    public sharedBalanceService: SharedBalanceService
+    private bookService: BooksService
   ) {
     this.books = [];
-    this.sharedBalanceService.balance$;
   }
 
   ngOnInit(): void {

@@ -1,35 +1,16 @@
-import { APP_BASE_HREF } from '@angular/common';
-import { EmptyRouteComponent } from './empty-route/empty-route.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WelcomeBooksComponent } from './welcome-books/welcome-books.component';
-import { BookListComponent } from './book-list/book-list.component';
-import { BookDetailsComponent } from './book-details/book-details.component';
+import { BooksModule } from "./books/books.module";
 
 const routes: Routes = [
   {
-    path: '',
-    component: WelcomeBooksComponent,
-  },
-  {
-    path: 'books',
-    children: [
-      {
-        path: '',
-        component: BookListComponent,
-      },
-      {
-        path: ':id',
-        component: BookDetailsComponent,
-      },
-    ],
-  },
-  { path: '**', component: EmptyRouteComponent },
+    path: "",
+    loadChildren: () => BooksModule
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

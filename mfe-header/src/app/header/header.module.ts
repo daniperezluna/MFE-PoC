@@ -1,12 +1,19 @@
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HeaderComponent } from './header.component';
+import { RouterModule } from "@angular/router";
 
 @NgModule({
-  declarations: [HeaderComponent],
-  imports: [BrowserModule, RouterModule],
-  exports: [HeaderComponent],
+  declarations: [
+    HeaderComponent
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule.forChild([])
+  ],
+  exports: [
+    HeaderComponent
+  ]
 })
-export class HeaderModule {}
+export class HeaderModule { }

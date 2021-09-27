@@ -1,27 +1,37 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { SharedBalanceService } from 'shared-balance';
 
 @Component({
   selector: 'mfe-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   isAuthenticated: boolean = false;
-  username: string = '';
+  username: string = "";
   balance: number = 0;
 
-  constructor(public sharedBalanceService: SharedBalanceService) {}
+  constructor(private el: ElementRef,
+    private sharedBalanceService: SharedBalanceService) {}
 
-  @HostListener('document:mfe-login', ['$event'])
+  ngOnInit() {
+    this.addLoginEventListener();
+  }
+
   login(e: any) {
-    console.log('LOGIN');
     this.username = e.detail.username;
-    this.sharedBalanceService.balance$;
+    this.sharedBalanceService.calcBalance().subscribe(balance => {
+      this.balance = balance;
+    });
     this.isAuthenticated = true;
   }
 
   logout() {
     this.isAuthenticated = false;
+    window.dispatchEvent(new CustomEvent('mfe-login:logout'));
+  }
+
+  private addLoginEventListener(): void {
+    window.addEventListener('mfe-login', (e: any) => this.login(e));
   }
 }

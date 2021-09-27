@@ -1,4 +1,3 @@
-import { SharedBalanceService } from 'shared-balance';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeBooksComponent implements OnInit {
 
-  constructor(public sharedBalanceService: SharedBalanceService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

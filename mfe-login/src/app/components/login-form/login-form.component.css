@@ -11,7 +11,7 @@ form {
 
 input {
     display: block;
-    width: 100%;
+    width: auto;
     margin-top:5px;
     border: 0;
     border-bottom: 2px solid #333;
